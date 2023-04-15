@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "shoutheheckup",
+  "version": "${version}",
+
+  "name": "ShouTheHeckUp",
+  "description": "RainVaporeon's ShouTheHeckUp ported to Fabric 1.19.3",
+  "authors": [
+    "Commander07"
+  ],
+  "contact": {
+    "sources": "https://github.com/Commander07/ShouTheHeckUp-Fabric"
+  },
+
+  "license": "LGPL-2.1",
+  "icon": "assets/shoutheheckup/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.commander07.shoutheheckup.ShouTheHeckUp"
+    ]
+  },
+  "mixins": [
+    "shoutheheckup.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.17",
+    "fabric-api": "*",
+    "minecraft": "~1.19.3",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
