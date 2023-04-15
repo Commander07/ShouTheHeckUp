@@ -45,19 +45,20 @@ public abstract class ChatHudMixin {
                     }
                 }
             }
-        } else {
-            if (Config.enabled && Config.filterChat && Config.bannedWords.stream().anyMatch(message.getString()::contains)) {
-                switch (Config.hideLevel) {
-                    case 3, 2 -> {
-                        ci.cancel();
-                    }
-                    case 1 -> {
-                        addMessage(Text.of("§7§o[Blocked message by " + message_arr[0] + "]").getWithStyle(Text.empty().getStyle().withHoverEvent(HoverEvent.Action.SHOW_TEXT.buildHoverEvent(message))).get(0), signature, this.client.inGameHud.getTicks(), indicator, false);
-                        ci.cancel();
-                    }
-                    case 0 -> {
-                        addMessage(Text.of("§7§o[Blocked message]").getWithStyle(Text.empty().getStyle().withHoverEvent(HoverEvent.Action.SHOW_TEXT.buildHoverEvent(message))).get(0), signature, this.client.inGameHud.getTicks(), indicator, false);
-                        ci.cancel();
+            else {
+                if (Config.filterChat && Config.bannedWords.stream().anyMatch(message.getString()::contains)) {
+                    switch (Config.hideLevel) {
+                        case 3, 2 -> {
+                            ci.cancel();
+                        }
+                        case 1 -> {
+                            addMessage(Text.of("§7§o[Blocked message by " + message_arr[0] + "]").getWithStyle(Text.empty().getStyle().withHoverEvent(HoverEvent.Action.SHOW_TEXT.buildHoverEvent(message))).get(0), signature, this.client.inGameHud.getTicks(), indicator, false);
+                            ci.cancel();
+                        }
+                        case 0 -> {
+                            addMessage(Text.of("§7§o[Blocked message]").getWithStyle(Text.empty().getStyle().withHoverEvent(HoverEvent.Action.SHOW_TEXT.buildHoverEvent(message))).get(0), signature, this.client.inGameHud.getTicks(), indicator, false);
+                            ci.cancel();
+                        }
                     }
                 }
             }
