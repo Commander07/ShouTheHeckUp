@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "ShouTheHeckUp",
-  "description": "RainVaporeon's ShouTheHeckUp ported to Fabric 1.19.3",
+  "description": "RainVaporeon's ShouTheHeckUp ported to Fabric 1.20",
   "authors": [
     "Commander07"
   ],
@@ -26,9 +26,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.17",
+    "fabricloader": ">=0.14.21",
     "fabric-api": "*",
-    "minecraft": "~1.19.3",
+    "minecraft": "~1.20",
     "java": ">=17"
   },
   "suggests": {
